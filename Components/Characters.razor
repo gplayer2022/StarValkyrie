@@ -1,0 +1,41 @@
+﻿<!-- セクション : キャラクター紹介 -->
+<section id="characters" class="section">
+    <h2 class="section-title">キャラクター</h2>
+    <p class="section-desc">共に戦うヒロインたちを一部紹介！</p>
+
+    <div class="grid-container">
+        <!-- カード 1 -->
+        <article class="card">
+            <div class="card-tag">主人公</div>
+            <h3>星空 ヒカリ</h3>
+            <p><img src="images/01-hikari.webp" alt="星空ヒカリ" srcset=""></p>
+            <p class="cv">CV: ○○ さくら</p>
+            <p>明るく前向きな高校1年生。太陽の力を宿した純白のドレスに変身して戦う。</p>
+        </article>
+
+        <!-- カード 2 -->
+        <article class="card">
+            <div class="card-tag">ライバル</div>
+            <h3>月城 カグヤ</h3>
+            <p><img src="images/02-kaguya.webp" alt="月城カグヤ" srcset=""></p>
+            <p class="cv">CV: △△ あおい</p>
+            <p>クールで完璧主義な生徒会長。月の聖剣を操る、誇り高き変身戦士。</p>
+        </article>
+
+        <!-- カード 3 -->
+        <article class="card">
+            <div class="card-tag">ムードメーカー</div>
+            <h3>風間 アオイ</h3>
+            <p><img src="images/03-aoi.webp" alt="風間アオイ" srcset=""></p>
+            <p class="cv">CV: □□ みどり</p>
+            <p>運動神経抜群のムードメーカー。風の弓を使い、遠距離から仲間をサポート。</p>
+        </article>
+    </div>
+</section>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("Characters component loaded.");
+    }
+}

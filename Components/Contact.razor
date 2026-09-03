@@ -1,0 +1,44 @@
+﻿<!-- セクション4: 事前登録フォーム (フォームタグの練習) -->
+<section id="contact" class="section">
+    <h2 class="section-title">事前登録フォーム</h2>
+
+    <form class="form-container">
+        <div class="form-group">
+            <label for="email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="email" name="email" placeholder="somebody@example.com" required>
+        </div><!-- .form-group -->
+
+        <div class="form-group">
+            <label for="platform">遊ぶ予定のOS</label>
+            <select id="platform" name="platform">
+                <option value="ios">iOS (iPhone)</option>
+                <option value="android">Android</option>
+                <option value="both">両方</option>
+                <option value="decided">未定</option>
+            </select>
+        </div><!-- .form-group -->
+
+        <div class="form-group">
+            <label>推しキャラ（任意）</label>
+            <div class="radio-group">
+                <label><input type="radio" name="fav" value="hikari" checked> ヒカリ</label>
+                <label><input type="radio" name="fav" value="kaguya"> カグヤ</label>
+                <label><input type="radio" name="fav" value="aoi"> アオイ</label>
+            </div><!-- .radio-group -->
+        </div><!-- .form-group -->
+
+        <div class="form-group">
+            <label for="message">ご意見・ご要望（任意）</label>
+            <textarea id="message" name="message" rows="4" placeholder="応援メッセージなどをどうぞ！"></textarea>
+        </div><!-- .form-group -->
+
+        <button type="submit" class="btn btn-submit">登録して変身する！</button>
+    </form>
+</section>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("Contact component loaded.");
+    }
+}

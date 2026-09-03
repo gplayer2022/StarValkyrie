@@ -1,0 +1,381 @@
+﻿/* --------------------- */
+/* 全体の設定 */
+/* --------------------- */
+:root {
+    /* 魔法少女ピンク */
+    --primary-color: #ff477e;
+    /* 薄いパープル */
+    --secondary-color: #7209b7;
+    /* ゴールド */
+    --accent-color: #ffb703;
+    /* 紫がかった白 */
+    --bg-color: #faf9fe;
+    /* 濃いグレー (文字用) */
+    --text-color: #2b2d42;
+    --white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* スムーススクロール (アンカーリンククリック時に滑らかに移動) */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'ヒラギノ角ゴ Pro W3', 'Meiryo', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+img {
+    min-width: 0;
+    width: 100%;
+}
+
+/* --------------------- */
+/* ヘッダー */
+/* --------------------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem 2rem;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.site-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    /* transition: 色変化を滑らかに */
+    transition: color 0.3s ease;
+}
+
+    .site-nav a:hover {
+        color: var(--primary-color);
+    }
+
+/* --------------------- */
+/* メインビジュアル */
+/* --------------------- */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.badge {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin: 1rem 0;
+}
+
+.hero p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* animation: アニメーションでボタンをふわふわ動かす */
+.btn-pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* --------------------- */
+/* 共通コンテナ */
+/* --------------------- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-desc {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* --------------------- */
+/* ボタン */
+/* --------------------- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 71, 126, 0.4);
+    /* transition: マウスホバー用の変化時間 */
+    transition: all 0.3s ease;
+}
+
+    .btn:hover {
+        background-color: #e03067;
+        /* 浮き上がる効果 */
+        transform: translateY(-2px);
+    }
+
+.flex-image figcaption {
+    padding-right: 4px;
+    font-size: 0.6em;
+    text-align: right;
+}
+
+/* --------------------- */
+/* セクション : 概要 */
+/* --------------------- */
+.flex-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.flex-text ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+
+/* --------------------- */
+/* セクション : キャラクター紹介 */
+/* --------------------- */
+.grid-container {
+    display: grid;
+    /* 均等に 3 列で */
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* auto-fit と minmax を使い、レスポンシブな列数を自動計算 */
+    /* 自動フィット、最小 : 250px 、最大均等列比 */
+    /* 基本は最小値（ 250px ）を守るが、画面に余白ができたら最大値（ 1fr ）まで伸びて画面を埋める */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: var(--white);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /* transition: ホバー時にカードを浮き上がらせる */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+.card-tag {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    background-color: #eee;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.card .cv {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+/* --------------------- */
+/* セクション : ゲームシステム */
+/* --------------------- */
+.table-wrapper {
+    /* スマホで表がはみ出た場合に横スクロールさせる */
+    overflow-x: auto;
+}
+
+    .table-wrapper table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: var(--white);
+        margin-bottom: 2rem;
+    }
+
+    .table-wrapper th,
+    .table-wrapper td {
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+    }
+
+    .table-wrapper th {
+        background-color: #f2f0f9;
+        color: var(--secondary-color);
+    }
+
+.quote-box {
+    background-color: var(--white);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+    .quote-box cite {
+        display: block;
+        font-style: normal;
+        text-align: right;
+        font-size: 0.85rem;
+        color: #888;
+    }
+
+/* --------------------- */
+/* セクション : フォーム */
+/* --------------------- */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+.required {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    /* フォーカス時のアニメーション */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+        /* outline 単体での利用は非推奨（ border-color や box-shadow と併せて利用すること！） */
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(255, 71, 126, 0.2);
+    }
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+}
+
+/* --------------------- */
+/* セクション : フッタ */
+/* --------------------- */
+.site-footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-size: 0.85rem;
+}
+
+/* --------------------- */
+/* レスポンシブ対応 */
+/* --------------------- */
+/* スマホ画面（幅 768px 以下）用の調整 */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Flexboxの縦並び化 */
+    .flex-container {
+        flex-direction: column;
+    }
+}

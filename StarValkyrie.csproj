@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include=".github\workflows\" />
+    <None Include=".github\workflows\gh-pages.yml" />
   </ItemGroup>
 
 </Project>

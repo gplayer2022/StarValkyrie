@@ -7,9 +7,9 @@
 ## プロジェクト作成手順
 
 1. メニュー [ファイル] > [新規作成] > [プロジェクト] を選択
-1. ウィンドウ [新しいプロジェクトの作成] で `Blazor WebAssembly スタンドアロン アプリ` を選択し、ボタン [次へ] を押下
-1. ウィンドウ [新しいプロジェクトを構成します] でプロジェクト名・場所・ソリューション名を設定し、ボタン [次へ] を押下
-1. ウィンドウ [追加情報] で、下記のように設定し、ボタン [作成] を押下
+2. ウィンドウ [新しいプロジェクトの作成] で `Blazor WebAssembly スタンドアロン アプリ` を選択し、ボタン [次へ] を押下
+3. ウィンドウ [新しいプロジェクトを構成します] でプロジェクト名・場所・ソリューション名を設定し、ボタン [次へ] を押下
+4. ウィンドウ [追加情報] で、下記のように設定し、ボタン [作成] を押下
     - フレームワーク: `.NET 10.0`
     - 認証の種類: `なし`
     - HTTPS 用の構成: ☑
@@ -26,9 +26,11 @@
     - 必ずソリューションのルートからの相対パスで指定すること！
     - 1 字たりとても間違えないこと！
     - ただし、 `.yml` ファイル名については任意でよい
-1. GitHub リポジトリで `Settings` > `Pages` > `Branch` を `gh-pages` に設定する
-1. GitHub リポジトリで `Settings` > `Actions` > `General` > `Workflow permissions` を `Read and write permissions` に設定する
-1. Visual Studio でソリューションをコミットおよびプッシュする
+2. GitHub リポジトリで `Settings` > `Code` でブランチ切り替え用のドロップダウンから [View all branches] を選択する
+3. GitHub リポジトリの、`Branches` でボタン [New branch] をクリックし、 `gh-pages` ブランチを作成する
+4. GitHub リポジトリで `Settings` > `Pages` > `Branch` を `gh-pages` に設定する
+5. GitHub リポジトリで `Settings` > `Actions` > `General` > `Workflow permissions` を `Read and write permissions` に設定する
+6. Visual Studio でソリューションをコミットおよびプッシュする
 
 
 ## `.razor` ファイルの説明
